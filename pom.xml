@@ -111,6 +111,7 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>mappers/*.xml</include>
+                    <include>**/*.yml</include>
                 </includes>
             </resource>
         </resources>
