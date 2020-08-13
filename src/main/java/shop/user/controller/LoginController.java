@@ -1,4 +1,4 @@
-package shop.login.login;
+package shop.user.controller;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -15,7 +15,7 @@ import java.util.Map;
 @Api(tags = "用户登录接口")
 @RestController
 @RequestMapping("/login")
-public class loginController {
+public class LoginController {
     @ApiOperation("根据id查找用户")
     @ApiImplicitParam(name = "id", value = "用户id", required = true, dataType = "String", paramType = "path")
     @GetMapping("/{id}")
