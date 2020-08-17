@@ -3,7 +3,7 @@
 <mapper namespace="shop.user.dao.UserDao">
 
     <select id="getUser" parameterType="string"
-            resultType="java.shop.user.domain.entity.User">
+            resultType="shop.user.domain.entity.User">
         SELECT id,name,mobile,mail,password,loginStatus,lastLoginTime,lastLoginIp,registerTime,userType,account
         FROM sys_user
         WHERE 1=1 and id=#{id}
