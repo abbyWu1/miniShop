@@ -3,5 +3,9 @@ package shop.user.service;
 import shop.user.domain.entity.User;
 
 public interface UserService {
-    public User getUserById(String id);
+    User getUserById(String id);
+
+    void addUser(User user);
+
+    void updateUser(User user);
 }
