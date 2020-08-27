@@ -1,8 +1,8 @@
 package shop.user.dao;
 
-import org.springframework.stereotype.Repository;
+
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import shop.user.domain.entity.User;
-@Repository
-public interface UserDao {
-    User getUser(String id);
+
+public interface UserDao extends BaseMapper<User> {
 }

@@ -1,5 +1,10 @@
 package shop.config;
 
+import com.baomidou.mybatisplus.extension.plugins.OptimisticLockerInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import springfox.documentation.builders.ApiInfoBuilder;
@@ -11,9 +16,12 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+
+@EnableAutoConfiguration
+@MapperScan("shop.user.dao")//映射mapper地址
 @Configuration
 @EnableSwagger2
-public class SwaggerConfig {
+public class SysConfig {
     @Bean
     public Docket createRestApi() {
         return new Docket(DocumentationType.SWAGGER_2)
@@ -29,5 +37,11 @@ public class SwaggerConfig {
                 .license("The Apache License")
                 .licenseUrl("http://www.baidu.com")
                 .build());
+    }
+
+    /* 乐观锁插件*/
+    @Bean
+    public OptimisticLockerInterceptor optimisticLockerInterceptor() {
+        return new OptimisticLockerInterceptor();
     }
 }

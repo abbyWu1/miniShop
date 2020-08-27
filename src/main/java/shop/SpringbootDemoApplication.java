@@ -6,9 +6,8 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@MapperScan("shop.user.dao")//映射mapper地址
-@SpringBootApplication(exclude = {DataSourceAutoConfiguration.class})
-@EnableAutoConfiguration
+
+@SpringBootApplication
 public class SpringbootDemoApplication {
 
     public static void main(String[] args) {
